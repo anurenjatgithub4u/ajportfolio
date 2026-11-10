@@ -47,10 +47,13 @@ export const profile = {
   location: "India · Open to remote", // TODO
   headline: "I design and build mobile apps people trust.",
   intro:
-    "I take products from user flow to App Store — sketching the journey, designing the UI, then shipping it in React Native and Expo for iOS and Android.", // TODO: your own words
+    "I take apps from the first user flow to the store listing. I sketch the journey, design the screens, then build them myself in React Native and Expo for iOS and Android.",
+  // About statement. Words wrapped in *asterisks* are set in the serif italic.
+  statement:
+    "I'm a mobile developer who designs. I care about the quiet details that make people *trust* an app: clear words, honest loading states, buttons you can actually hit, and screens that still make sense the first time you open them.",
   bio: [
-    "I'm a mobile developer who designs. For the past 3+ years I've worked across the whole product: mapping user flows, wireframing, polishing UI in Figma, and building production apps in React Native with Expo and EAS.", // TODO
-    "I care about the details that make an app feel trustworthy — clear copy, honest loading and error states, accessible touch targets, and screens that still make sense to someone using the app for the first time.", // TODO
+    "For the past 3+ years I've worked across the whole product. I map user flows, wireframe, polish the UI in Figma, and then build and ship it with React Native, Expo and EAS.", // TODO: confirm years
+    "My apps cover fleet tracking, engineering project management, ERP dashboards, smart-home control and language learning. Different users, same goal: make the complicated thing feel simple.",
   ],
   email: "anurenjatbusiness@gmail.com",
   phone: "+91 73563 80659",
@@ -68,12 +71,12 @@ export const profile = {
 };
 
 export const process = [
-  { step: "01", title: "Understand", body: "Talk to users and stakeholders, define the job the app must do, and agree on what success looks like." },
-  { step: "02", title: "Map the flow", body: "Turn goals into user flows and edge cases — empty, loading, error, offline — before any pixels." },
-  { step: "03", title: "Wireframe", body: "Low-fidelity screens to test structure and hierarchy fast, without colour getting in the way." },
-  { step: "04", title: "Design the UI", body: "Polished, accessible UI in Figma with a small component system that maps one-to-one to code." },
-  { step: "05", title: "Build", body: "React Native + Expo, typed with TypeScript, wired to real APIs with auth, secure storage and push." },
-  { step: "06", title: "Ship & learn", body: "EAS builds and OTA updates to the stores, then iterate on real usage and feedback." },
+  { step: "01", title: "Understand", body: "Talk to the people who will use it. Agree on the one job the app has to do well, and how we'll know it does." },
+  { step: "02", title: "Map the flow", body: "Turn that job into user flows, including the unglamorous states: empty, loading, error, offline, no permission." },
+  { step: "03", title: "Wireframe", body: "Grey boxes first. Structure and hierarchy are cheap to change before there's any colour to argue about." },
+  { step: "04", title: "Design the UI", body: "Accessible, polished screens in Figma, built from a small component set that maps one-to-one to code." },
+  { step: "05", title: "Build", body: "React Native and Expo in TypeScript, wired to real APIs with auth, secure token storage and push notifications." },
+  { step: "06", title: "Ship and learn", body: "EAS builds and over-the-air updates to both stores, then iterate on what real usage tells us." },
 ];
 
 export const toolkit = [
@@ -94,13 +97,12 @@ export const toolkit = [
 // Set enabled: false to hide this section.
 export const ai = {
   enabled: true,
-  title: "AI where it helps — with a human in the loop",
-  intro:
-    "I use AI in the products I build and in how I build them, and design those features so people can see what the AI did and correct it.", // TODO
+  title: "Useful where it helps, with a human in the loop",
+  intro: "",
   points: [
-    { title: "In products", body: "LLM-backed features such as generated content and assistants, connected to a real backend." }, // TODO
-    { title: "In my workflow", body: "Faster prototyping, UX copy drafts and code review — always checked before it ships." },
-    { title: "Responsibly", body: "Clear labelling, fallbacks when the model fails, no sensitive data sent without need, and a human review step." },
+    { title: "In the product", body: "Assistants and generated content wired to a real backend, like the JESi AI helper and BiLingo's lesson pipeline." },
+    { title: "In my workflow", body: "Faster prototypes, first drafts of UX copy and a second pair of eyes on code. Always reviewed before it ships." },
+    { title: "Done carefully", body: "Clear labels on anything generated, a fallback when the model fails, and no personal data sent without a reason." },
   ],
 };
 
@@ -108,7 +110,7 @@ export const projects: Project[] = [
   {
     slug: "trackolet",
     name: "Trackolet",
-    tagline: "Fleet tracking for businesses — live vehicle map, trip replay, SOS and geofence alerts, and exportable reports.",
+    tagline: "Fleet tracking for businesses. Live vehicle map, trip replay, SOS and geofence alerts, and exportable reports.",
     category: "Logistics · Real-time GPS",
     role: "UX design & React Native development", // TODO: confirm
     year: "2026", // TODO
@@ -123,7 +125,7 @@ export const projects: Project[] = [
       summary:
         "Trackolet is a fleet tracking app for businesses that run vehicles, machinery and other mobile assets. It turns a constant stream of GPS positions into a live map, trip history, alerts and reports that operations teams can act on from their phone.",
       problem:
-        "Fleet managers were tied to a desktop dashboard. When a vehicle sent an SOS, crossed a geofence or went offline, they found out late — and pulling a report for a customer meant waiting until they were back at a computer.",
+        "Fleet managers were tied to a desktop dashboard. When a vehicle sent an SOS, crossed a geofence or went offline, they found out late, and pulling a report for a customer meant waiting until they were back at a computer.",
       users: [
         { name: "Fleet manager", need: "Needs to see the whole fleet at a glance and react the moment something goes wrong." },
         { name: "Operations / admin", need: "Needs trip, stoppage and geofence reports to share with customers and management." },
@@ -160,7 +162,7 @@ export const projects: Project[] = [
         },
         {
           title: "Trips as a timeline",
-          body: "Trip history reads like a timeline — start and end place names, distance, duration and alert count — with a Play trip button to replay it on the map.",
+          body: "Trip history reads like a timeline: start and end place names, distance, duration and alert count, with a Play trip button to replay it on the map.",
         },
       ],
       accessibility: [
@@ -173,13 +175,13 @@ export const projects: Project[] = [
         { title: "Real-time positions", body: "TODO: how live positions reach the app (polling / sockets) and how the map updates without re-rendering the whole fleet." },
         { title: "Push alerts & reports", body: "TODO: push notification setup for SOS, geofence and over-speed events, and PDF / Excel export and sharing from the device." },
       ],
-      outcome: "TODO: Results — fleet size handled (the dashboard shows 18,000+ entities), client feedback, or what you learned.",
+      outcome: "TODO: Results. fleet size handled (the dashboard shows 18,000+ entities), client feedback, or what you learned.",
     },
   },
   {
     slug: "jesi",
     name: "JESi",
-    tagline: "Project tracking for JES customers and engineers — upload projects, follow progress and chat about changes.",
+    tagline: "Project tracking for JES customers and engineers. Upload projects, follow progress and chat about changes.",
     category: "Engineering · Collaboration",
     role: "UX design & React Native development", // TODO: confirm
     year: "2025", // TODO
@@ -193,7 +195,7 @@ export const projects: Project[] = [
     caseStudy: {
       timeline: "TODO",
       summary:
-        "JESi connects JES engineering customers with the engineers working on their projects. Customers upload Quantity Takeoff and Revit projects, follow progress in real time, and chat with engineers about corrections — all in one app.",
+        "JESi connects JES engineering customers with the engineers working on their projects. Customers upload Quantity Takeoff and Revit projects, follow progress in real time, and chat with engineers about corrections, all in one app.",
       problem:
         "Project updates were scattered across email and calls. Customers didn't know where their project stood, and correction requests got lost between threads, slowing delivery.",
       users: [
@@ -223,7 +225,7 @@ export const projects: Project[] = [
         },
         {
           title: "Chat tied to each project",
-          body: "Conversations live inside the project, so every correction request has context and structured replies — status, delivery date and final output link.",
+          body: "Conversations live inside the project, so every correction request has context and structured replies: status, delivery date and final output link.",
         },
         {
           title: "Centre action for the AI assistant",
@@ -245,7 +247,7 @@ export const projects: Project[] = [
   {
     slug: "scorelix",
     name: "Scorelix",
-    tagline: "A mobile companion for Odoo ERP — role-based dashboards for sales, finance, HR and inventory leads.",
+    tagline: "A mobile companion for Odoo ERP. Role-based dashboards for sales, finance, HR and inventory leads.",
     category: "Enterprise · ERP dashboards",
     role: "UX design & React Native development", // TODO: confirm
     year: "2026", // TODO
@@ -259,7 +261,7 @@ export const projects: Project[] = [
   {
     slug: "bilingo",
     name: "BiLingo",
-    tagline: "Turns scrolling time into learning time — quick English, German and Maths lessons that pop up when you've scrolled too long.",
+    tagline: "Turns scrolling time into learning time. Quick English, German and Maths lessons that pop up when you've scrolled too long.",
     category: "Education · Digital wellbeing",
     role: "UX design & React Native development", // TODO: confirm
     year: "2026",
@@ -273,7 +275,7 @@ export const projects: Project[] = [
     caseStudy: {
       timeline: "TODO · e.g. 4 months",
       summary:
-        "BiLingo is a friendly study ghost that lives on your phone. Instead of asking people to set aside time to study, it turns the small moments they already spend on their phone — unlocking it, or scrolling too long — into bite-sized lessons in English, German and Maths.",
+        "BiLingo is a friendly study ghost that lives on your phone. Instead of asking people to set aside time to study, it turns the small moments they already spend on their phone, unlocking it, or scrolling too long, into bite-sized lessons in English, German and Maths.",
       problem:
         "People lose hours to short-video and social feeds, and traditional learning apps ask for a separate study session that rarely happens. The challenge was to meet users inside the habit they already have, without feeling like a nag or a spy.",
       users: [
@@ -288,7 +290,7 @@ export const projects: Project[] = [
       flow: [
         { title: "Pick apps", caption: "Choose which apps eat your time" },
         { title: "Set a limit", caption: "1, 5 or 10 minutes" },
-        { title: "Ghost pops in", caption: "Time's up — a quick lesson appears" },
+        { title: "Ghost pops in", caption: "Time's up, a quick lesson appears" },
         { title: "Learn & unlock", caption: "Finish the card, streak continues" },
       ],
       wireframes: [
@@ -299,7 +301,7 @@ export const projects: Project[] = [
       decisions: [
         {
           title: "A mascot, not a warning",
-          body: "The study ghost delivers every interruption. A character with personality makes \"Enough scrolling! Let's learn.\" feel playful instead of scolding — so people keep the app installed.",
+          body: "The study ghost delivers every interruption. A character with personality makes \"Enough scrolling! Let's learn.\" feel playful instead of scolding, so people keep the app installed.",
         },
         {
           title: "Reels, but productive",
@@ -307,7 +309,7 @@ export const projects: Project[] = [
         },
         {
           title: "Two-button interruptions",
-          body: "Each unlock word has exactly two actions — \"I know it\" or \"Next word\" — so a lesson takes a couple of seconds and never blocks the user for long.",
+          body: "Each unlock word has exactly two actions, \"I know it\" or \"Next word\", so a lesson takes a couple of seconds and never blocks the user for long.",
         },
         {
           title: "Progress you can see",
@@ -316,21 +318,21 @@ export const projects: Project[] = [
       ],
       accessibility: [
         "Privacy by design: only measures how long chosen apps are open, never reads their content",
-        "User stays in control — they choose the apps and the limit",
+        "User stays in control: they choose the apps and the limit",
         "Read-aloud cards highlight each word as it is spoken",
         "Clear right/wrong feedback with icons and text, not colour alone",
       ],
       engineering: [
         { title: "TODO: Usage tracking", body: "How the app measures time in selected apps (Android usage access) and triggers the learning break." },
-        { title: "TODO: Content pipeline", body: "How lessons and quizzes are generated and kept fresh — e.g. a scheduled backend job using an LLM, reviewed before release." },
+        { title: "TODO: Content pipeline", body: "How lessons and quizzes are generated and kept fresh, e.g. a scheduled backend job using an LLM, reviewed before release." },
       ],
-      outcome: "TODO: Results — downloads, rating, retention, or what you learned shipping it.",
+      outcome: "TODO: Results. downloads, rating, retention, or what you learned shipping it.",
     },
   },
   {
     slug: "trueway",
     name: "Trueway Smart Pro",
-    tagline: "A smart thermostat app — control temperature, fan speed and schedules for every room, from anywhere.",
+    tagline: "A smart thermostat app. Control temperature, fan speed and schedules for every room, from anywhere.",
     category: "IoT · Smart home",
     role: "UX design & React Native development", // TODO: confirm
     year: "2024",
@@ -344,11 +346,11 @@ export const projects: Project[] = [
     caseStudy: {
       timeline: "TODO",
       summary:
-        "Trueway Smart Pro is the companion app for Trueway Controls' smart thermostats. It lets people turn devices on, set the temperature, control fan speed and lock settings for every room in their home or office — from one clear screen.",
+        "Trueway Smart Pro is the companion app for Trueway Controls' smart thermostats. It lets people turn devices on, set the temperature, control fan speed and lock settings for every room in their home or office, from one clear screen.",
       problem:
         "Wall thermostats are fiddly, and managing several of them across rooms and buildings means walking to each one. The app had to make device setup painless and make day-to-day control feel as direct as turning a physical dial.",
       users: [
-        { name: "Home owner", need: "Wants each room at the right temperature without getting up — and a quick way to switch everything off." },
+        { name: "Home owner", need: "Wants each room at the right temperature without getting up, and a quick way to switch everything off." },
         { name: "Facility / office manager", need: "Manages many rooms across places and needs them organised, named and easy to find." },
       ],
       goals: [
@@ -375,11 +377,11 @@ export const projects: Project[] = [
         },
         {
           title: "Places → rooms → devices",
-          body: "Devices are grouped by place (Home, Office) and room, with suggested room names and icons — so setting up a whole building takes taps, not typing.",
+          body: "Devices are grouped by place (Home, Office) and room, with suggested room names and icons, so setting up a whole building takes taps, not typing.",
         },
         {
           title: "Empty states that guide",
-          body: "With no devices yet, the home screen is a single large + button with one line of help — the next step is always obvious.",
+          body: "With no devices yet, the home screen is a single large + button with one line of help, the next step is always obvious.",
         },
         {
           title: "Four controls, one row",
@@ -395,11 +397,11 @@ export const projects: Project[] = [
       engineering: [
         {
           title: "Auto connectivity (AP & SA modes)",
-          body: "The app connects to the thermostat directly in access-point mode for setup, and through the home network in station mode afterwards — switching automatically. TODO: add how you built it.",
+          body: "The app connects to the thermostat directly in access-point mode for setup, and through the home network in station mode afterwards, switching automatically. TODO: add how you built it.",
         },
         { title: "TODO: Device communication", body: "How commands (power, temperature, fan, schedule) reach the thermostat and how the UI handles a device that's offline." },
       ],
-      outcome: "TODO: Results — number of devices or customers, client feedback, or what you learned.",
+      outcome: "TODO: Results. number of devices or customers, client feedback, or what you learned.",
     },
   },
 ];

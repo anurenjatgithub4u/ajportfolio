@@ -1,21 +1,16 @@
 import { profile } from "@/lib/data";
+import { container } from "./ui";
 
 export default function Footer() {
   return (
     <footer className="border-t border-line">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <div className={`${container} flex flex-col gap-4 py-8 text-[13px] text-muted sm:flex-row sm:items-center sm:justify-between`}>
         <p>
-          © {new Date().getFullYear()} {profile.name}. Designed &amp; built by me.
+          © {new Date().getFullYear()} {profile.name}. Designed in Figma, built with Next.js.
         </p>
-        <ul className="flex flex-wrap gap-6">
-          {profile.socials.map((s) => (
-            <li key={s.label}>
-              <a href={s.href} target="_blank" rel="noreferrer" className="hover:text-fg">
-                {s.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <a href="#main" className="link-u self-start text-fg/80 hover:text-fg sm:self-auto">
+          Back to top ↑
+        </a>
       </div>
     </footer>
   );
