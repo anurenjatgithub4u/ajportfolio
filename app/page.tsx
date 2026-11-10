@@ -151,6 +151,9 @@ export default function Home() {
               <a href={`mailto:${profile.email}`} className="rounded-full bg-ink px-6 py-3 font-semibold text-fg transition hover:-translate-y-0.5">
                 {profile.email}
               </a>
+              <a href={`tel:${profile.phone.replace(/\s/g, "")}`} className="rounded-full bg-ink px-6 py-3 font-semibold text-fg transition hover:-translate-y-0.5">
+                {profile.phone}
+              </a>
               <a href={profile.cvUrl} download="Anurenj-CV.pdf" className="rounded-full border-2 border-ink px-6 py-3 font-semibold transition hover:bg-ink hover:text-fg">
                 Download CV
               </a>

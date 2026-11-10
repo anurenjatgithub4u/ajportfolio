@@ -53,7 +53,8 @@ export const profile = {
     "I care about the details that make an app feel trustworthy — clear copy, honest loading and error states, accessible touch targets, and screens that still make sense to someone using the app for the first time.", // TODO
   ],
   email: "anurenjatbusiness@gmail.com",
-  cvUrl: "/cv.pdf", // TODO: put your CV at /public/cv.pdf
+  phone: "+91 73563 80659",
+  cvUrl: "/cv.pdf",
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/your-handle" }, // TODO
     { label: "GitHub", href: "https://github.com/your-handle" }, // TODO
