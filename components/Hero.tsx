@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { profile, featured } from "@/lib/data";
+import { profile, featured, projects, heroScreens } from "@/lib/data";
 import Phone from "./Phone";
 
 const chips = [
@@ -14,10 +14,13 @@ const chips = [
 
 export default function Hero() {
   const reduce = useReducedMotion();
-  // Prefer real screenshots (from any featured app); fall back to placeholder screens.
+  // Hero phones come from heroScreens in lib/data.ts; fall back to the first real screenshots.
   const real = featured.flatMap((p) => p.screenshots.map((src) => ({ ...p, screenshots: [src] })));
-  const a = real[0] ?? featured[0];
-  const b = real[1] ?? featured[1] ?? featured[0];
+  const picked = heroScreens
+    .map(({ slug, shot }) => projects.find((p) => p.slug === slug && p.screenshots[shot]))
+    .map((p, i) => (p ? { ...p, screenshots: [p.screenshots[heroScreens[i].shot]] } : undefined));
+  const a = picked[0] ?? real[0] ?? featured[0];
+  const b = picked[1] ?? real[1] ?? featured[1] ?? featured[0];
   const float = (d: number) =>
     reduce ? {} : { animate: { y: [0, -14, 0] }, transition: { duration: 6, delay: d, repeat: Infinity, ease: "easeInOut" as const } };
 

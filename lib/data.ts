@@ -403,5 +403,11 @@ export const projects: Project[] = [
   },
 ];
 
+// The two floating phones in the hero: app slug + screenshot index (0 = first image).
+export const heroScreens = [
+  { slug: "jesi", shot: 1 }, // left phone: JESi dashboard
+  { slug: "trackolet", shot: 1 }, // right phone: Trackolet trip history
+];
+
 export const featured = projects.filter((p) => p.featured && p.caseStudy);
 export const others = projects.filter((p) => !p.featured || !p.caseStudy);
